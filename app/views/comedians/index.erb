@@ -7,17 +7,17 @@
   <h1>Comedians</h1>
   <% @comedians.each do |comedian| %>
   <ul>
-    <li><a href='/comedians/<%= comedian.id %>'><%= comedian.name %></a></li>
-    <li><%= comedian.age %></li>
+    <li><a href='/comedians/<%= comedian.id %>'>Name: <%= comedian.name %></a></li>
+    <li>Age: <%= comedian.age %></li>
   </ul>
   <% end %>
   <h1>Specials</h1>
-  <% @specials.each do |special| %>
+  <% @comedians.specials.each do |special| %>
   <ul>
-    <li><a href='/comedians/<%= special.id %>'><%= special.name %></a></li>
+    <li><a href='/comedians/<%= special.id %>'>Name: <%= special.name %></a></li>
   </ul>
   <% end %>
   <h2>Comedian Average Age</h2>
-  <li><%= @comedians.average_age %></li>
+  <li>Average Age:<%= @comedians.average_age %></li>
 </body>
 </html>

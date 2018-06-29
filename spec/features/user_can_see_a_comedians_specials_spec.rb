@@ -7,13 +7,16 @@ Then I also see a list of each comedian's specials.
 RSpec.describe do
   describe 'visits comedians/show page' do
     it "should see a comedian's specials" do
-      special1 = Special.create(name: 'Soap Box')
-      special2 = Special.create(name: 'Soup Pot')
+      comedian = Comedian.create(name: 'Ian', age: 40)
+      special1 = comedian.specials.create(name: 'Soap Box')
+      special2 = comedian.specials.create(name: 'Soup Pot')
+      special1_name = special1.name
+      special2_name = special2.name
 
       visit('/comedians')
 
-      expect(page).to have_content(special1.name)
-      expect(page).to have_content(special2.name)
+      expect(page).to have_content(special1_name)
+      expect(page).to have_content(special2_name)
     end
   end
 end

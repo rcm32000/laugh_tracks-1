@@ -10,12 +10,15 @@ RSpec.describe do
       comedian1 = Comedian.create(name: 'Ian', age: 40)
       comedian2 = Comedian.create(name: 'Fluffy', age: 34)
       comedian3 = Comedian.create(name: 'George', age: 34)
+      comedian1 = comedian1.name
+      comedian2 = comedian2.name
+      comedian3 = comedian3.name
 
       visit '/comedians?age=34'
 
-      expect(page).to have_content(comedian2.name)
-      expect(page).to have_content(comedian3.name)
-      expect(page).to_not have_content(comedian1.name)
+      expect(page).to have_content(comedian2)
+      expect(page).to have_content(comedian3)
+      expect(page).to_not have_content(comedian1)
     end
   end
 end
