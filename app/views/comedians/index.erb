@@ -1,0 +1,15 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Comedians</title>
+</head>
+<body>
+  <h1>Comedians</h1>
+  <% @comedians.each do |comedian| %>
+  <ul>
+    <li><a href='/comedians/<%= comedian.id %>'><%= comedian.name %></a></li>
+    <li><%= comedian.age %></li>
+  </ul>
+  <% end %>
+</body>
+</html>
