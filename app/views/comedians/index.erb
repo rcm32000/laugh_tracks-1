@@ -11,5 +11,11 @@
     <li><%= comedian.age %></li>
   </ul>
   <% end %>
+  <h1>Specials</h1>
+  <% @specials.each do |special| %>
+  <ul>
+    <li><a href='/comedians/<%= special.id %>'><%= special.name %></a></li>
+  </ul>
+  <% end %>
 </body>
 </html>

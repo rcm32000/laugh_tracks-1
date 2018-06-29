@@ -14,7 +14,7 @@ RSpec.describe do
       comedian2 = Comedian.create(name: 'Dione', age: 25)
 
       visit '/comedians'
-save_and_open_page
+
       expect(page).to have_content(comedian1.age)
       expect(page).to have_content(comedian2.name)
     end
