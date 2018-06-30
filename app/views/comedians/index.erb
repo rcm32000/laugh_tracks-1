@@ -9,12 +9,13 @@
   <ul>
     <li><a href='/comedians/<%= comedian.id %>'>Name: <%= comedian.name %></a></li>
     <li>Age: <%= comedian.age %></li>
-  </ul>
-  <% end %>
-  <h1>Specials</h1>
-  <% @comedians.specials.each do |special| %>
-  <ul>
-    <li><a href='/comedians/<%= special.id %>'>Name: <%= special.name %></a></li>
+    <h1>Specials</h1>
+    <p>Number of Specials: <%= comedian.specials_count %></p>
+    <% comedian.specials.each do |special| %>
+    <ul>
+      <li><a href='/comedians/<%= special.id %>'>Name: <%= special.name %></a></li>
+    </ul>
+    <% end %>
   </ul>
   <% end %>
   <h2>Comedian Average Age</h2>
